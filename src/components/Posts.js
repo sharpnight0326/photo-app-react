@@ -87,7 +87,7 @@ const Posts = (profileUsername) =>{
             "post_id": e.target.dataset.postid,
             "text": inputValue
         };
-        fetch("/api/comments", {
+        fetch("https://photo-app-secured.herokuapp.com/api/comments", {
             method: "POST",
             headers: getHeaders(),
             body: JSON.stringify(postData)
