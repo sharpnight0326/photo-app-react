@@ -1,4 +1,4 @@
-const NavBar = () =>{
+const NavBar = (profileUserName) =>{
     return (
         <div>
             <ul>
@@ -8,6 +8,7 @@ const NavBar = () =>{
                 <li>
                     <a href="/api">API Docs</a>
                 </li>
+                <li>{profileUserName.profileUsername}</li>
                 <li><a href="logout">Sign out</a></li>
             </ul>
         </div>

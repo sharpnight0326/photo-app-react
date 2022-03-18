@@ -32,7 +32,7 @@ class App extends React.Component {
             <div>
             <nav className="main-nav">
                 <h1>Photo App</h1>
-                <NavBar />
+                <NavBar profileUsername={this.state.profileUsername} />
             </nav>
 
             <aside>

@@ -15,9 +15,9 @@ const Profile = () =>{
             })
     })
     return (
-        <div>
-            <img src={profileImg} />
-            {profileName}
+        <div style={{fontSize: 28+"px"}}>
+            <img src={profileImg} style={{borderRadius: 50+"%"}} />
+            <strong>{profileName}</strong>
         </div>
     )
 }
