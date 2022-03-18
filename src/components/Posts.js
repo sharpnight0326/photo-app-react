@@ -8,7 +8,7 @@ const Posts = (profileUsername) =>{
     const [newComments, setNewComments] = useState([])
 
     useEffect(()=>{
-        fetch("/api/posts", {
+        fetch("https://photo-app-secured.herokuapp.com/api/posts", {
             headers: getHeaders()
         })
             .then(response => response.json())
@@ -22,7 +22,7 @@ const Posts = (profileUsername) =>{
             // userId: `${user.id}`
         }
         if (elem.classList.contains("far")) {
-            fetch("/api/posts/" + postId + "/likes/", {
+            fetch("https://photo-app-secured.herokuapp.com/api/posts/" + postId + "/likes/", {
                 method: "POST",
                 headers: getHeaders(),
                 body: JSON.stringify(postData)
@@ -35,7 +35,7 @@ const Posts = (profileUsername) =>{
                 });
         }
         else {
-            fetch("/api/posts/"+postId+"/likes/"+ev.target.dataset.likeid, {
+            fetch("https://photo-app-secured.herokuapp.com/api/posts/"+postId+"/likes/"+ev.target.dataset.likeid, {
                 method: "DELETE",
                 headers: getHeaders()
             })
@@ -54,7 +54,7 @@ const Posts = (profileUsername) =>{
             "post_id": postId
         }
         if (elem.classList.contains("far")) {
-            fetch("/api/bookmarks/", {
+            fetch("https://photo-app-secured.herokuapp.com/api/bookmarks/", {
                 method: "POST",
                 headers: getHeaders(),
                 body: JSON.stringify(postData)
@@ -68,7 +68,7 @@ const Posts = (profileUsername) =>{
                 });
         }
         else {
-            fetch("/api/bookmarks/"+ev.target.dataset.bookmarkid, {
+            fetch("https://photo-app-secured.herokuapp.com/api/bookmarks/"+ev.target.dataset.bookmarkid, {
                 method: "DELETE",
                 headers: getHeaders()
             })

@@ -4,7 +4,7 @@ import {getHeaders} from "../utils";
 const Suggestions = () =>{
     const [suggestions, setSuggestions] = useState([])
     useEffect(()=>{
-        fetch("/api/suggestions", {
+        fetch("https://photo-app-secured.herokuapp.com/api/suggestions", {
             headers: getHeaders()
         })
             .then(response => response.json())
@@ -19,7 +19,7 @@ const Suggestions = () =>{
             "user_id": e.target.dataset.userId
         }
         if (e.target.textContent === "follow"){
-            fetch("/api/following/", {
+            fetch("https://photo-app-secured.herokuapp.com/api/following/", {
                 method: "POST",
                 headers: getHeaders(),
                 body: JSON.stringify(postData)
@@ -32,7 +32,7 @@ const Suggestions = () =>{
                 })
         }
         if (e.target.textContent === "unfollow"){
-            const deleteURL ="/api/following/"+e.target.dataset.followingId
+            const deleteURL ="https://photo-app-secured.herokuapp.com/api/following/"+e.target.dataset.followingId
             fetch(deleteURL, {
                 method: "DELETE",
                 headers: getHeaders()

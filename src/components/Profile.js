@@ -5,7 +5,7 @@ const Profile = () =>{
     const [profileImg, setProfileImg] = useState("")
     const [profileName, setProfileName] = useState("")
     useEffect(()=>{
-        fetch("/api/profile", {
+        fetch("https://photo-app-secured.herokuapp.com/api/profile", {
             headers: getHeaders()
         })
             .then(response => response.json())

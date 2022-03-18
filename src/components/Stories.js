@@ -4,7 +4,7 @@ import {getHeaders} from "../utils";
 const Stories = () =>{
     const [stories, setStories] = useState([])
     useEffect(()=>{
-        fetch("/api/stories", {
+        fetch("https://photo-app-secured.herokuapp.com/api/stories", {
             headers: getHeaders()
         })
             .then(response => response.json())
